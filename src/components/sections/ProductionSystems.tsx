@@ -77,7 +77,7 @@ export default function ProductionSystems() {
           className="text-center mb-16"
         >
           <div className="flex justify-center items-center gap-4 mb-4">
-            <Box className="w-8 h-8 text-neon-blue" />
+            <Box className="w-8 h-8 text-white/40" />
             <h2 className="text-3xl md:text-5xl font-bold text-white">
               Production <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-sky-300">Systems</span>
             </h2>
@@ -114,7 +114,7 @@ export default function ProductionSystems() {
                     <Icon className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-neon-blue transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-white transition-colors">
                       {mod.title}
                     </h3>
                     <span className="text-[10px] font-mono text-blue-200/70 uppercase border-b border-blue-200/20 mb-3 tracking-widest">
@@ -131,7 +131,7 @@ export default function ProductionSystems() {
                 </div>
 
                 {/* Click Hint */}
-                <div className="absolute bottom-6 right-6 text-white/30 group-hover:text-neon-blue/70 transition-colors flex items-center gap-1">
+                <div className="absolute bottom-6 right-6 text-white/30 group-hover:text-white/60 transition-colors flex items-center gap-1">
                   <span className="text-xs font-mono uppercase">Expand</span>
                   <Settings className="w-4 h-4 animate-spin-slow" style={{ animationDuration: '4s' }} />
                 </div>
@@ -175,13 +175,13 @@ export default function ProductionSystems() {
                       </div>
                       <div>
                         <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">{mod.title}</h2>
-                        <span className="text-sm font-mono text-neon-purple tracking-wider uppercase">
+                        <span className="text-sm font-mono text-purple-200/60 tracking-wider uppercase">
                           Architecture Visualization
                         </span>
                       </div>
                     </div>
 
-                    <p className="text-gray-300 text-base md:text-lg mb-10 leading-relaxed border-l-4 border-neon-blue/30 pl-4 py-1">
+                    <p className="text-gray-300 text-base md:text-lg mb-10 leading-relaxed border-l-4 border-white/20 pl-4 py-1">
                       {mod.architecture.description}
                     </p>
 
@@ -196,9 +196,9 @@ export default function ProductionSystems() {
                                  initial={{ opacity: 0, y: 20 }}
                                  animate={{ opacity: 1, y: 0 }}
                                  transition={{ delay: 0.2 + idx * 0.1 }}
-                                 className="relative bg-[#0a0f1d] border border-neon-blue/30 p-4 rounded-lg min-w-[160px] text-center shadow-[0_0_15px_rgba(125,211,252,0.1)] shrink-0 group hover:border-neon-blue hover:shadow-[0_0_20px_rgba(125,211,252,0.4)] transition-all"
+                                 className="relative bg-[#0a0f1d] border border-white/20 p-4 rounded-lg min-w-[160px] text-center shadow-[0_0_15px_rgba(255,255,255,0.05)] shrink-0 group hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all"
                                >
-                                  <span className="text-sm font-semibold text-white group-hover:text-neon-blue transition-colors">
+                                  <span className="text-sm font-semibold text-white group-hover:text-white transition-colors">
                                     {comp}
                                   </span>
                                </motion.div>
@@ -211,14 +211,14 @@ export default function ProductionSystems() {
                                     transition={{ delay: 0.5 }}
                                     className="hidden md:flex items-center justify-center px-4"
                                   >
-                                     <div className="h-px w-12 bg-gradient-to-r from-neon-blue/20 via-neon-blue to-neon-blue/20 relative">
-                                        <div className="absolute w-2 h-2 rounded-full bg-neon-blue top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glow-blue" />
+                                     <div className="h-px w-12 bg-gradient-to-r from-white/10 via-white/40 to-white/10 relative">
+                                        <div className="absolute w-2 h-2 rounded-full bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                                      </div>
                                   </motion.div>
                                )}
 
                                {idx < mod.architecture.components.length - 1 && (
-                                  <div className="md:hidden flex h-8 w-px bg-neon-blue/50 my-2" />
+                                  <div className="md:hidden flex h-8 w-px bg-white/20 my-2" />
                                )}
                              </React.Fragment>
                           ))}

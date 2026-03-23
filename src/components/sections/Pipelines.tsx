@@ -33,7 +33,7 @@ export default function Pipelines() {
             className="text-center mb-16"
           >
              <h3 className="text-3xl md:text-5xl font-bold text-white flex items-center justify-center gap-4 mb-4">
-                <Cloud className="w-8 h-8 text-neon-blue" />
+                <Cloud className="w-8 h-8 text-white/40" />
                 <span>AWS Cloud <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-sky-300">Architecture</span></span>
              </h3>
              <p className="text-gray-400">Interactive serverless pipeline processing millions of events.</p>
@@ -66,7 +66,7 @@ export default function Pipelines() {
                        {i < awsNodes.length - 1 && (
                          <div className="hidden md:block absolute top-[40px] md:top-[48px] left-[50%] w-full h-px bg-white/10 z-0">
                            <motion.div
-                              className="h-full bg-gradient-to-r from-transparent via-neon-blue to-transparent glow-blue"
+                              className="h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
                               initial={{ x: "-100%" }}
                               whileInView={{ x: "100%" }}
                               viewport={{ once: false }} // Allows re-animating when scrolled back
@@ -79,7 +79,7 @@ export default function Pipelines() {
                        {i < awsNodes.length - 1 && (
                          <div className="md:hidden h-12 w-px bg-white/10 my-2 relative">
                             <motion.div
-                              className="absolute top-0 right-0 left-0 h-1/2 bg-neon-blue glow-blue"
+                              className="absolute top-0 right-0 left-0 h-1/2 bg-white/40"
                               initial={{ y: "-100%" }}
                               whileInView={{ y: "200%" }}
                               transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: i * 0.2 }}
@@ -101,7 +101,7 @@ export default function Pipelines() {
             className="text-center mb-16"
           >
              <h3 className="text-3xl md:text-5xl font-bold text-white flex items-center justify-center gap-4 mb-4">
-                <Workflow className="w-8 h-8 text-neon-purple" />
+                <Workflow className="w-8 h-8 text-white/40" />
                 <span>LLM Integration <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-indigo-300">Pipeline</span></span>
              </h3>
              <p className="text-gray-400">RAG lifecycle token flow from raw prompt to structured intelligence.</p>
@@ -119,7 +119,7 @@ export default function Pipelines() {
                        transition={{ duration: 0.5, delay: i * 0.15 }}
                        className="relative w-full md:w-auto flex flex-col items-center"
                     >
-                       <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 bg-black flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.05)] glow-purple relative">
+                       <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 bg-black flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.05)] relative">
                           <MessageSquareCode className="w-6 h-6 md:w-8 md:h-8 text-white/70" />
                        </div>
                        <div className="text-center mt-4">
@@ -130,15 +130,15 @@ export default function Pipelines() {
                        {/* Token Flow effect */}
                        {i < llmNodes.length - 1 && (
                          <div className="hidden md:flex absolute top-8 md:top-10 left-[80%] md:left-[90px] w-full md:w-[150%] max-w-[200px] h-px justify-center pointer-events-none">
-                            <div className="w-full h-px border-t border-dashed border-neon-purple/30 relative">
+                            <div className="w-full h-px border-t border-dashed border-white/20 relative">
                                <motion.div
-                                 className="absolute -top-[2px] w-2 h-2 rounded-full bg-neon-purple glow-purple blur-[1px]"
+                                 className="absolute -top-[2px] w-2 h-2 rounded-full bg-white/60 blur-[1px]"
                                  initial={{ left: "0%" }}
                                  animate={{ left: "100%" }}
                                  transition={{ duration: 1, repeat: Infinity, ease: "linear", delay: i * 0.3 }}
                                />
                                <motion.div
-                                 className="absolute -top-[2px] w-1.5 h-1.5 rounded-full bg-white glow-text"
+                                 className="absolute -top-[2px] w-1.5 h-1.5 rounded-full bg-white"
                                  initial={{ left: "0%" }}
                                  animate={{ left: "100%" }}
                                  transition={{ duration: 1, repeat: Infinity, ease: "linear", delay: (i * 0.3) + 0.2 }}
@@ -147,9 +147,9 @@ export default function Pipelines() {
                          </div>
                        )}
                        {i < llmNodes.length - 1 && (
-                         <div className="md:hidden flex h-10 w-px border-l border-dashed border-neon-purple/30 my-2 relative">
+                         <div className="md:hidden flex h-10 w-px border-l border-dashed border-white/20 my-2 relative">
                             <motion.div
-                                 className="absolute -left-[2px] w-2 h-2 rounded-full bg-neon-purple glow-purple blur-[1px]"
+                                 className="absolute -left-[2px] w-2 h-2 rounded-full bg-white/60 blur-[1px]"
                                  initial={{ top: "0%" }}
                                  animate={{ top: "100%" }}
                                  transition={{ duration: 1, repeat: Infinity, ease: "linear", delay: i * 0.3 }}

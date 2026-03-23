@@ -47,7 +47,7 @@ export default function NavBar() {
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className="fixed top-6 left-0 right-0 z-50 flex justify-center w-full pointer-events-none"
     >
-      <nav className="pointer-events-auto bg-[#0a0f1d]/80 backdrop-blur-md border border-neon-blue/20 rounded-full px-6 py-3 shadow-[0_0_15px_rgba(125,211,252,0.1)]">
+      <nav className="pointer-events-auto bg-black/60 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
         <ul className="flex items-center space-x-6 text-sm font-mono text-gray-300">
           {navItems.map((item) => (
             <li key={item.name}>
@@ -55,8 +55,8 @@ export default function NavBar() {
                 href={item.href}
                 onClick={() => setActiveSection(item.href.replace("#", ""))}
                 className={clsx(
-                  "hover:text-neon-blue transition-colors duration-200 relative",
-                  activeSection === item.href.replace("#", "") && "text-neon-blue glow-text"
+                  "hover:text-white transition-colors duration-200 relative",
+                  activeSection === item.href.replace("#", "") && "text-white glow-text"
                 )}
               >
                 {activeSection === item.href.replace("#", "") && (

@@ -26,7 +26,7 @@ const PipelineVisualization = () => {
   return (
     <div className="relative w-full aspect-square md:aspect-auto md:h-full flex items-center justify-center min-h-[400px]">
       {/* Background glow for the active node sequence area */}
-      <div className="absolute inset-0 bg-neon-blue/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute inset-0 bg-white/5 rounded-full blur-[100px] pointer-events-none" />
       
       <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-6 md:gap-8 relative z-10 w-full max-w-2xl px-4">
         {pipelineNodes.map((node, index) => {
@@ -46,17 +46,17 @@ const PipelineVisualization = () => {
                 <motion.div
                   className={`w-16 h-16 md:w-20 md:h-20 rounded-xl flex items-center justify-center border backdrop-blur-md transition-all duration-300 ${
                     isActive
-                      ? "bg-neon-blue/20 border-neon-blue glow-blue shadow-[0_0_20px_rgba(125,211,252,0.6)]"
+                      ? "bg-white/20 border-white shadow-[0_0_20px_rgba(255,255,255,0.2)]"
                       : isPast
                       ? "bg-white/5 border-white/20 text-white/70"
-                      : "bg-[#0a0f1d] border-white/10 text-white/40"
+                      : "bg-black/40 border-white/10 text-white/40"
                   }`}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Icon className={`w-8 h-8 md:w-10 md:h-10 ${isActive ? "text-neon-blue" : ""}`} />
+                  <Icon className={`w-8 h-8 md:w-10 md:h-10 ${isActive ? "text-white" : ""}`} />
                 </motion.div>
                 <div className="absolute -bottom-8 whitespace-nowrap text-sm font-mono tracking-wider">
-                  <span className={isActive ? "text-neon-blue glow-text" : isPast ? "text-white/70" : "text-white/40"}>
+                  <span className={isActive ? "text-white glow-text" : isPast ? "text-white/70" : "text-white/40"}>
                     {node.label}
                   </span>
                 </div>
@@ -66,7 +66,7 @@ const PipelineVisualization = () => {
               {index < pipelineNodes.length - 1 && (
                 <div className="hidden md:block h-px w-8 lg:w-12 bg-white/10 relative">
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-neon-blue to-transparent"
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
                     initial={{ x: "-100%", opacity: 0 }}
                     animate={
                       isActive || (activeNode === 0 && index === pipelineNodes.length - 1) // reset cycle logic
@@ -82,7 +82,7 @@ const PipelineVisualization = () => {
                   />
                   {/* Static glow for past connections */}
                   {isPast && (
-                    <div className="absolute inset-0 bg-neon-blue/50 shadow-[0_0_8px_rgba(125,211,252,0.5)]" />
+                    <div className="absolute inset-0 bg-white/20 shadow-[0_0_8px_rgba(255,255,255,0.2)]" />
                   )}
                 </div>
               )}
@@ -91,7 +91,7 @@ const PipelineVisualization = () => {
               {index < pipelineNodes.length - 1 && (
                 <div className="md:hidden w-px h-8 bg-white/10 relative">
                    {isPast && (
-                    <div className="absolute inset-0 bg-neon-blue/50 shadow-[0_0_8px_rgba(125,211,252,0.5)]" />
+                    <div className="absolute inset-0 bg-white/20 shadow-[0_0_8px_rgba(255,255,255,0.2)]" />
                   )}
                 </div>
               )}
@@ -124,7 +124,7 @@ export default function Hero() {
               </span>
             </h1>
             
-            <p className="text-gray-400 text-lg md:text-xl max-w-xl font-light leading-relaxed border-l-4 border-neon-blue/50 pl-4 py-1">
+            <p className="text-gray-400 text-lg md:text-xl max-w-xl font-light leading-relaxed border-l-4 border-white/20 pl-4 py-1">
               &quot;I design and deploy scalable LLM systems, automation pipelines, and AWS-native intelligent platforms.&quot;
             </p>
           </motion.div>
@@ -143,7 +143,7 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="/resume.pdf"
+              href="/prakriti_rawat_resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 rounded-lg bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-2 group"

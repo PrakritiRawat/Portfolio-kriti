@@ -113,12 +113,12 @@ export default function TechStack() {
                className="mb-12 sticky top-32"
              >
                 <div className="flex items-center gap-4 mb-4">
-                   <Settings2 className="w-8 h-8 text-neon-purple" />
-                   <h2 className="text-3xl md:text-5xl font-bold text-white">System <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple/80 to-neon-blue/80">Thinking</span></h2>
+                   <Settings2 className="w-8 h-8 text-white/40" />
+                   <h2 className="text-3xl md:text-5xl font-bold text-white">System <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-sky-300">Thinking</span></h2>
                 </div>
                 <p className="text-gray-400 mb-12">How I Design Production AI Systems</p>
 
-                <div className="bg-[#0a0f1d] border border-white/10 rounded-2xl p-6 md:p-10 relative overflow-hidden">
+                <div className="bg-black border border-white/10 rounded-2xl p-6 md:p-10 relative overflow-hidden">
                    <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
                    
                    <div className="relative z-10 flex flex-col gap-2 w-full max-w-[300px] mx-auto">
@@ -130,9 +130,9 @@ export default function TechStack() {
                                viewport={{ once: true, margin: "-50px" }}
                                transition={{ duration: 0.5, delay: i * 0.1 }}
                                className={`p-4 rounded-xl border flex items-center justify-center relative cursor-default transition-all duration-300 ${
-                                 i === 2 || i === 3 ? "bg-neon-purple/10 border-neon-purple/50 text-neon-purple glow-purple shadow-[0_0_15px_rgba(192,132,252,0.2)]" : 
-                                 i === 4 ? "bg-orange-500/10 border-orange-500/30 text-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.1)]" :
-                                 i === 5 ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.1)]" :
+                                 i === 2 || i === 3 ? "bg-white/10 border-white/30 text-white shadow-[0_0_15px_rgba(255,255,255,0.05)]" : 
+                                 i === 4 ? "bg-blue-500/10 border-blue-500/20 text-blue-100/80 shadow-[0_0_15px_rgba(59,130,246,0.05)]" :
+                                 i === 5 ? "bg-white/5 border-white/20 text-white shadow-[0_0_15px_rgba(255,255,255,0.03)]" :
                                  "bg-white/5 border-white/10 text-white"
                                }`}
                             >
@@ -148,7 +148,7 @@ export default function TechStack() {
                                         initial={{ y: "-100%" }}
                                         whileInView={{ y: "100%" }}
                                         transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: i * 0.2 }}
-                                        className={`absolute w-full h-full ${i === 2 ? "bg-neon-purple" : i === 4 ? "bg-emerald-400" : "bg-neon-blue"} glow-blue`}
+                                        className={`absolute w-full h-full ${i === 2 ? "bg-white/40" : i === 4 ? "bg-blue-400/40" : "bg-white/20"}`}
                                      />
                                   </div>
                                </div>

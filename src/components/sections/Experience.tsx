@@ -65,7 +65,7 @@ export default function Experience() {
         className="max-w-4xl mx-auto"
       >
         <div className="flex items-center gap-4 mb-16 justify-center">
-          <Briefcase className="w-8 h-8 text-neon-blue" />
+           <Briefcase className="w-8 h-8 text-white/40" />
           <h2 className="text-3xl md:text-5xl font-bold text-white text-center">
             Work{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-sky-300">
@@ -106,7 +106,7 @@ export default function Experience() {
                       <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
                         {exp.company}
                       </h3>
-                      <p className="text-neon-blue font-mono text-sm md:text-base mb-2">
+                       <p className="text-white/70 font-mono text-sm md:text-base mb-2">
                         {exp.role}
                       </p>
                       <p className="text-gray-400 text-sm">{exp.description}</p>

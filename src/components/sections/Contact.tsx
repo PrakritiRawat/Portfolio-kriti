@@ -11,14 +11,14 @@ export default function Contact() {
            initial={{ opacity: 0, scale: 0.9 }}
            whileInView={{ opacity: 1, scale: 1 }}
            viewport={{ once: true }}
-           className="bg-[#0a0f1d] border border-neon-blue/20 rounded-3xl p-10 md:p-16 relative overflow-hidden group"
+           className="bg-white/[0.02] border border-white/10 rounded-3xl p-10 md:p-16 relative overflow-hidden group backdrop-blur-sm"
         >
            {/* Animated bg effect */}
-           <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-neon-blue to-transparent glow-blue" />
+           <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white to-transparent glow-blue" />
            
            <div className="relative z-10">
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-neon-blue/10 flex items-center justify-center text-neon-blue mb-8 glow-blue">
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-white/10 flex items-center justify-center text-white mb-8 glow-blue">
                  <Terminal className="w-8 h-8" />
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
@@ -31,7 +31,7 @@ export default function Contact() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                  <a 
                    href="mailto:contact@prakritirawat.com" // Update as needed
-                   className="px-8 py-4 w-full sm:w-auto rounded-xl bg-neon-blue text-black font-bold tracking-wide hover:shadow-[0_0_30px_rgba(125,211,252,0.6)] hover:scale-105 transition-all flex items-center justify-center gap-2"
+                   className="px-8 py-4 w-full sm:w-auto rounded-xl bg-white text-black font-bold tracking-wide hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-105 transition-all flex items-center justify-center gap-2"
                  >
                     <Mail className="w-5 h-5" /> Say Hello
                  </a>
@@ -39,7 +39,7 @@ export default function Contact() {
                     <a href="https://github.com/prakritirawat" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl border border-white/10 text-gray-400 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all">
                        <Github className="w-6 h-6" />
                     </a>
-                    <a href="https://linkedin.com/in/prakritirawat" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl border border-white/10 text-gray-400 hover:text-neon-blue hover:border-neon-blue/30 hover:bg-neon-blue/10 transition-all group/linkedin">
+                    <a href="https://linkedin.com/in/prakritirawat" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl border border-white/10 text-gray-400 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all group/linkedin">
                        <Linkedin className="w-6 h-6" />
                     </a>
                  </div>
@@ -48,7 +48,7 @@ export default function Contact() {
         </motion.div>
 
         <div className="mt-16 text-sm text-gray-500 font-mono flex items-center justify-center gap-2">
-           <span className="w-2 h-2 rounded-full bg-neon-blue animate-pulse" />
+           <span className="w-2 h-2 rounded-full bg-emerald-500/60 animate-pulse" />
            System live. Built with Next.js, Framer Motion & React Three Fiber.
         </div>
       </div>
