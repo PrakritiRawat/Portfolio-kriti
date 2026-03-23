@@ -22,7 +22,7 @@ export default function GlobalBackground() {
     containerRef.current.appendChild(renderer.domElement);
 
     // --- Milky Way Generator ---
-    const starCount = 8000;
+    const starCount = 3000;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(starCount * 3);
     const colors = new Float32Array(starCount * 3);
@@ -91,7 +91,7 @@ export default function GlobalBackground() {
 
     // Nebula dust effect using a second points layer with much larger size
     const dustGeometry = new THREE.BufferGeometry();
-    const dustCount = 300;
+    const dustCount = 100;
     const dustPositions = new Float32Array(dustCount * 3);
     
     for (let i = 0; i < dustCount; i++) {
@@ -116,7 +116,7 @@ export default function GlobalBackground() {
     scene.add(dustSystem);
 
     // --- Vibrant Blue Stardust Layer ---
-    const blueCount = 1500;
+    const blueCount = 600;
     const blueGeometry = new THREE.BufferGeometry();
     const bluePositions = new Float32Array(blueCount * 3);
     const blueColors = new Float32Array(blueCount * 3);
