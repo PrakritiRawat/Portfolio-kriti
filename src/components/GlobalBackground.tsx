@@ -30,8 +30,9 @@ export default function GlobalBackground() {
 
     const color1 = new THREE.Color("#ffffff"); // Pure white
     const color2 = new THREE.Color("#e2e8f0"); // Soft grey/white
-    const color3 = new THREE.Color("#bae6fd"); // Very pale cosmic blue
+    const color3 = new THREE.Color("#7dd3fc"); // Bright sky blue
     const color4 = new THREE.Color("#c4b5fd"); // Very pale purple
+    const color5 = new THREE.Color("#3b82f6"); // Deep cosmic blue
 
     for (let i = 0; i < starCount; i++) {
        const distance = Math.random() * 150;
@@ -56,11 +57,11 @@ export default function GlobalBackground() {
 
        const mixedColor = new THREE.Color();
        const rand = Math.random();
-       // 60% pure white, 20% soft white, 15% pale blue, 5% pale purple
-       if (rand < 0.6) mixedColor.copy(color1);
-       else if (rand < 0.8) mixedColor.copy(color2);
-       else if (rand < 0.95) mixedColor.copy(color3);
-       else mixedColor.copy(color4);
+       // 50% white, 30% bright blue, 15% deep blue, 5% pale purple
+        if (rand < 0.5) mixedColor.copy(color1);
+        else if (rand < 0.8) mixedColor.copy(color3);
+        else if (rand < 0.95) mixedColor.copy(color5);
+        else mixedColor.copy(color4);
 
        colors[i * 3] = mixedColor.r;
        colors[i * 3 + 1] = mixedColor.g;
@@ -114,6 +115,43 @@ export default function GlobalBackground() {
     dustSystem.rotation.z = Math.PI / 4;
     scene.add(dustSystem);
 
+    // --- Vibrant Blue Stardust Layer ---
+    const blueCount = 1500;
+    const blueGeometry = new THREE.BufferGeometry();
+    const bluePositions = new Float32Array(blueCount * 3);
+    const blueColors = new Float32Array(blueCount * 3);
+    
+    for (let i = 0; i < blueCount; i++) {
+        // Concentrate along the band but with more vertical scatter
+        const x = (Math.random() - 0.5) * 250;
+        const y = (Math.random() - 0.5) * 40 + Math.sin(x * 0.03) * 15;
+        const z = (Math.random() - 0.5) * 100;
+        
+        bluePositions[i * 3] = x;
+        bluePositions[i * 3 + 1] = y;
+        bluePositions[i * 3 + 2] = z;
+        
+        const c = new THREE.Color("#60a5fa");
+        blueColors[i * 3] = c.r;
+        blueColors[i * 3 + 1] = c.g;
+        blueColors[i * 3 + 2] = c.b;
+    }
+    
+    blueGeometry.setAttribute('position', new THREE.BufferAttribute(bluePositions, 3));
+    blueGeometry.setAttribute('color', new THREE.BufferAttribute(blueColors, 3));
+    
+    const blueMaterial = new THREE.PointsMaterial({
+        size: 0.8,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.6,
+        blending: THREE.AdditiveBlending,
+    });
+    
+    const blueSystem = new THREE.Points(blueGeometry, blueMaterial);
+    blueSystem.rotation.z = Math.PI / 4;
+    scene.add(blueSystem);
+
     // Animation Loop
     let mouseX = 0;
     let mouseY = 0;
@@ -129,6 +167,7 @@ export default function GlobalBackground() {
       // Rotate the entire galaxy very slowly
       starSystem.rotation.y += 0.0002;
       dustSystem.rotation.y += 0.00015;
+      blueSystem.rotation.y += 0.00025;
 
       // Mouse parallax easing
       targetX = mouseX * 20;
@@ -165,6 +204,8 @@ export default function GlobalBackground() {
       material.dispose();
       dustGeometry.dispose();
       dustMaterial.dispose();
+      blueGeometry.dispose();
+      blueMaterial.dispose();
       if (containerRef.current) {
         containerRef.current.innerHTML = "";
       }
