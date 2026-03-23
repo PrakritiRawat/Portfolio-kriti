@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  --color-foreground: #f8fafc;
+  --color-navy: #000000; /* Replaced deep navy with void black */
+  --color-neon-blue: #7dd3fc; /* Cosmic Light Blue */
+  --color-neon-purple: #c084fc; /* Nebula Light Purple */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+:root {
+  --background: #000000;
+  --foreground: #f8fafc;
+  --grid-color: rgba(255, 255, 255, 0.03);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1b4b; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c084fc; 
+}
+
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+/* Cosmic Glow utilities - Standardized for subtle milkyway */
+.glow-blue {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+.glow-purple {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+.glow-text {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
